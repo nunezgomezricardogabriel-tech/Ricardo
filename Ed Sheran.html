@@ -3,65 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dedicatoria</title>
+    <title>Dedicatoria Especial</title>
     <style>
+        /* Estilos Generales */
         body {
             margin: 0;
-            font-family: sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Aquí pondremos la imagen de fondo */
+            background-image: url('imagen1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Efecto parallax sutil */
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-        /* Bloque púrpura superior */
-        .header {
-            background-color: #a832ff;
+            min-height: 100vh;
             color: white;
-            width: 100%;
-            padding: 40px 20px;
-            text-align: center;
-            box-sizing: border-box;
         }
-        .header h1 { margin: 0 0 20px 0; font-size: 24px; }
-        .header p { line-height: 1.6; font-size: 16px; max-width: 600px; margin: auto; }
-        
-        /* Contenedor del video */
-        .video-wrapper {
-            background: white;
-            padding: 20px;
-            margin-top: -20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            width: 90%;
-            max-width: 500px;
-        }
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* Relación 16:9 */
-            height: 0;
-        }
-        .iframe-container iframe {
+
+        /* Capa de Oscurecimiento (Overlay) para legibilidad */
+        .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+            z-index: -1; /* Detrás de todo el contenido */
+        }
+
+        /* Contenedor Principal (la tarjeta blanca con transparencia) */
+        .content-card {
+            background: rgba(255, 255, 255, 0.15); /* Blanco muy transparente */
+            backdrop-filter: blur(15px); /* Efecto "frosted glass" */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 15vh; /* Separación desde arriba */
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilo de la imagen pequeña (Miniatura) */
+        .album-art {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Textos */
+        h1 {
+            margin: 0 0 15px 0;
+            font-size: 28px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        p {
+            line-height: 1.8;
+            font-size: 16px;
+            max-width: 500px;
+            margin: auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+
+        /* El Botón de Acción (mismo estilo anterior pero mejorado) */
+        .btn-play {
+            background-color: #e50914; /* Rojo Netflix */
+            color: white;
+            padding: 18px 45px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-play:hover {
+            background-color: #b20710;
+            transform: translateY(-3px); /* Pequeña animación al pasar el mouse */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+        }
+
+        /* Media Query para celulares */
+        @media (max-width: 600px) {
+            .content-card { padding: 20px; margin-top: 10vh; }
+            h1 { font-size: 22px; }
+            p { font-size: 14px; }
+            .album-art { width: 80px; height: 80px; }
+            .btn-play { padding: 15px 35px; font-size: 16px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
+    <!-- La capa de fondo -->
+    <div class="overlay"></div>
+
+    <!-- La tarjeta principal -->
+    <div class="content-card">
+        <!-- Imagen del álbum/pareja -->
+        <!-- Reemplaza 'miniatura.jpg' con la ruta de tu imagen -->
+        <img src="Ed Sheeran in Thinking Out Loud music video.jpg" alt="Portada del álbum" class="album-art">
+
         <h1>Ed Sheeran - Thinking Out Loud</h1>
         <p>Cuando el tiempo pinte nuestras manos de historias y nuestras sonrisas tengan más recuerdos que años, seguiré encontrando en tus ojos el mismo hogar que encontré el primer día.</p>
-    </div>
 
-    <div class="video-wrapper">
-        <div class="iframe-container">
-            <iframe src="https://www.youtube.com/watch?v=CzQNwHJi5K0&list=RDCzQNwHJi5K0&start_radio=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <!-- El botón de redirección -->
+        <a href="https://www.youtube.com/watch?v=lp-EO5I60KA" class="btn-play" target="_blank">
+            ▶ Escuchar Canción
+        </a>
     </div>
 
 </body>
