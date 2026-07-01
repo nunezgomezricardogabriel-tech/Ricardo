@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedicatoria</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Bloque púrpura superior */
+        .header {
+            background-color: #a832ff;
+            color: white;
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .header h1 { margin: 0 0 20px 0; font-size: 24px; }
+        .header p { line-height: 1.6; font-size: 16px; max-width: 600px; margin: auto; }
+        
+        /* Contenedor del video */
+        .video-wrapper {
+            background: white;
+            padding: 20px;
+            margin-top: -20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Relación 16:9 */
+            height: 0;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Ed Sheeran - Thinking Out Loud</h1>
+        <p>Cuando el tiempo pinte nuestras manos de historias y nuestras sonrisas tengan más recuerdos que años, seguiré encontrando en tus ojos el mismo hogar que encontré el primer día.</p>
+    </div>
+
+    <div class="video-wrapper">
+        <div class="iframe-container">
+            <iframe src="https://www.youtube.com/watch?v=CzQNwHJi5K0&list=RDCzQNwHJi5K0&start_radio=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
